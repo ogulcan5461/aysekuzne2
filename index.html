@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boş Liman - Kuzenime Özel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background-color: #3c0d1f;
+      color: #fff;
+    }
+    header, section, footer {
+      padding: 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      color: #ffccd5;
+    }
+    .animated-text {
+      animation: fadeInText 8s ease-in-out infinite;
+      white-space: pre-line;
+      font-size: 1.3em;
+      line-height: 1.8;
+      color: #ffe6eb;
+      text-shadow: 1px 1px 2px #000;
+    }
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(20px); }
+      50% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+
+    /* Açılış ekranı */
+    #splash-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #3c0d1f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+    .splash-content {
+      text-align: center;
+      color: #ffccd5;
+    }
+    .splash-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ffccd5;
+      box-shadow: 0 0 15px rgba(255, 204, 213, 0.6);
+      margin-bottom: 20px;
+    }
+    #enter-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ffccd5;
+      color: #3c0d1f;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      body { font-size: 16px; padding: 10px; }
+      header, section, footer { padding: 15px; }
+      .animated-text { font-size: 1em; line-height: 1.5; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Açılış ekranı -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <img src="C:\Users\PC\Desktop\ayseyeozel\img\IMG_0068.jpg" alt="İkimizin Fotoğrafı" class="splash-photo" />
+      <h1>Boş Liman</h1>
+      <p>Senin için hazırladığım dijital bir sürpriz...</p>
+      <button id="enter-btn">Başla</button>
+    </div>
+  </div>
+<div class="side-images">
+  <img src="C:\Users\PC\Desktop\ayseyeozel\img\IMG_1545.jpg" alt="Sol Fotoğraf" class="left-img" />
+  <img src="C:\Users\PC\Desktop\ayseyeozel\img\IMG_0055.jpg" alt="Sağ Fotoğraf" class="right-img" />
+</div>
+  <!-- Şarkı -->
+  <audio id="bosliman-audio" autoplay loop>
+    <source src="C:\Users\PC\Desktop\ayseyeozel\Boş Liman [Official 4K Video] - Boş Liman.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Sayfa içeriği -->
+  <header>
+    <h1>Boş Liman</h1>
+    <p>Senin için özel bir dijital sürpriz...</p>
+  </header>
+
+  <section id="message">
+    <h2>Mesajım Sana</h2>
+    <p class="animated-text">
+      Küçükken birlikte koştuğumuz sokaklar hâlâ aklımda...  
+      Hatırlıyor musun, o gün yağmurda ıslanıp eve dönmüştük?  
+      Üşüyorduk ama gülüyorduk… çünkü o an sadece ikimiz vardık.  
+      Seninle büyümek, hayatın en güzel armağanıydı bana.  
+      Bu sayfa, sana olan sevgimin dijital bir yansıması...  
+      Tıpkı Boş Liman gibi: sakin, derin ve sadece sana ait.
+    </p>
+  </section>
+
+  <footer>
+    <p>Hazırlayan: Oğulcan 💻</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("enter-btn").addEventListener("click", () => {
+      const splash = document.getElementById("splash-screen");
+      splash.style.opacity = "0";
+      setTimeout(() => {
+        splash.style.display = "none";
+        const audio = document.getElementById("bosliman-audio");
+        if (audio) {
+          audio.play().catch((e) => {
+            console.log("Ses oynatılamadı:", e);
+          });
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

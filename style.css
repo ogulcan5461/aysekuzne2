@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  background-color: #3c0d1f;
+  color: #fff;
+}
+header, section, footer {
+  padding: 20px;
+  text-align: center;
+}
+h1, h2 {
+  color: #ffccd5;
+}
+.animated-text {
+  animation: fadeInText 8s ease-in-out infinite;
+  white-space: pre-line;
+  font-size: 1.3em;
+  line-height: 1.8;
+  color: #ffe6eb;
+  text-shadow: 1px 1px 2px #000;
+}
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Açılış ekranı */
+#splash-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3c0d1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+.splash-content {
+  text-align: center;
+  color: #ffccd5;
+}
+.splash-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffccd5;
+  box-shadow: 0 0 15px rgba(255, 204, 213, 0.6);
+  margin-bottom: 20px;
+}
+#enter-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #ffccd5;
+  color: #3c0d1f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Kenar görseller */
+.side-images {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: none;
+}
+.left-img, .right-img {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  opacity: 0.85;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 204, 213, 0.6);
+}
+.left-img {
+  left: 10px;
+}
+.right-img {
+  right: 10px;
+}
+
+/* Mobil uyumluluk */
+@media screen and (max-width: 768px) {
+  body { font-size: 16px; padding: 10px; }
+  header, section, footer { padding: 15px; }
+  .animated-text { font-size: 1em; line-height: 1.5; }
+  .left-img, .right-img { width: 60px; opacity: 0.7; }
+}
